@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
     styleUrls: ['post-create.component.scss'],
 })
 export class PostCreateComponent {
-    
+
+    newPost = 'NO CONTENT';
+
+    addPost(postInput: HTMLTextAreaElement) {
+        this.newPost = postInput.value;
+    }
 }
