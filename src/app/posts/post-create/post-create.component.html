@@ -1,6 +1,9 @@
 <mat-card>
     <form #postForm="ngForm">
         <mat-form-field>
+            <mat-label>
+                Title
+            </mat-label>
             <input matInput 
                    type="text"
                    name="title"
@@ -14,6 +17,9 @@
             </mat-error>
         </mat-form-field>
         <mat-form-field>
+            <mat-label>
+                Content
+            </mat-label>
             <textarea matInput 
                       name="content"
                       ngModel
