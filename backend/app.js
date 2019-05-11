@@ -29,16 +29,18 @@ app.post('/api/posts', (req, res, next) => {
         title: req.body.title,
         content: req.body.content,
     });
-    post.save();
-    res.status(201).json({
-        message: 'Post Added Sucessfully!'
+    post.save()
+    .then((createdPost) => {
+        res.status(201).json({
+            message: 'Post Added Sucessfully!',
+            postId: createdPost.id,
+        });
     });
 });
 
 app.get('/api/posts', (req, res, next) => {
     Post.find()
         .then((documents) => {
-            console.log(documents);
             res.status(200).json({
                 message: 'Posts fetched successfully!',
                 posts: documents,
