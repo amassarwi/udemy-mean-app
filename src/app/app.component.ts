@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Post } from './posts/post.model'
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  posts = [];
+  posts: Post[] = [];
 
-  postAdded(post) {
+  postAdded(post: Post) {
     this.posts.push(post);
   }
 }
