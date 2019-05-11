@@ -31,5 +31,5 @@ export class PostsListComponent implements OnInit, OnDestroy {
 
   deletePost(id: string) {
     this.postsService.deletePost(id);
-  };
+  }
 }

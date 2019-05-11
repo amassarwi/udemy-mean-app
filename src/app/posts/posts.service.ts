@@ -52,7 +52,9 @@ export class PostsService {
   deletePost(id: string) {
     this.http.delete<{message: string}>(`http://localhost:3000/api/posts/${id}`)
       .subscribe((res) => {
-
+        const newPosts = this.posts.filter((post: Post) => post.id !== id);
+        this.posts = newPosts;
+        this.postsUpdated.next([...this.posts]);
       });
   }
 }
