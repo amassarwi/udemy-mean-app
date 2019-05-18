@@ -1,5 +1,6 @@
 <mat-card>
-    <form #postForm="ngForm">
+    <form #postForm="ngForm"
+          *ngIf="!isLoading">
         <mat-form-field>
             <mat-label>
                 Title
@@ -40,4 +41,6 @@
             Save Post
         </button>
     </form>
+    <mat-spinner *ngIf="isLoading">
+    </mat-spinner>
 </mat-card>
