@@ -21,7 +21,7 @@
                    (change)="imagePicked($event)"
             />
         </div>
-        <div class="image-preview" *ngIf="imagePreview">
+        <div class="image-preview" *ngIf="imagePreview && form.controls.image.valid">
             <img [src]="imagePreview" [alt]="form.value.title" />
         </div>
         <mat-form-field>
